@@ -205,7 +205,7 @@ h2 {
 }
 
 /* Mobile Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
     .header-flex {
         justify-content: space-between;
     }
@@ -291,7 +291,7 @@ h2 {
 }
 
 /* Desktop Styles */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 481px) {
     .social-links {
         /* display: grid; */
         /* grid-template-columns: repeat(4, 1fr);  */
