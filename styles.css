@@ -20,11 +20,13 @@ body {
     background-color: #0073e6;
     color: white;
     border-bottom: 4px solid #005bb5;
+    position: relative;
+    z-index: 1000;
 }
 
 .header-flex {
     display: flex;
-    justify-content: center; /* Center by default */
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     position: relative;
@@ -74,6 +76,20 @@ body {
 
 .nav-links a:hover {
     background-color: #005bb5;
+}
+
+/* Mobile Menu Active */
+.nav-links.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #0073e6;
+    padding: 10px 0;
+    z-index: 999;
+    text-align: center;
 }
 
 /* Section Titles */
@@ -146,16 +162,15 @@ h2 {
 .social-links {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Grid for mobile view */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     margin-top: 20px;
     padding: 0;
-    justify-items: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
+    justify-items: center;
+    align-items: center;
 }
 
 .social-links li {
-    /* display: flex; */
     justify-content: center;
 }
 
@@ -204,8 +219,8 @@ h2 {
     margin-top: 50px;
 }
 
-/* Mobile Styles */
-@media screen and (max-width: 480px) {
+/* Responsive - Mobile */
+@media screen and (max-width: 768px) {
     .header-flex {
         justify-content: space-between;
     }
@@ -217,31 +232,17 @@ h2 {
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #0073e6;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        text-align: center;
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin: 15px 0;
+        background-color: #0073e6;
     }
 
     .skills-list {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 0;
-    }
-
-    .skill-item {
-        width: 100%;
     }
 
     .about p {
@@ -262,16 +263,8 @@ h2 {
     }
 
     .social-links {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr); 
+        grid-template-columns: 1fr;
         gap: 15px;
-        margin-top: 20px;
-         justify-items: center;
-    }
-
-    .social-links li {
-        display: flex;
-        justify-content: center; 
     }
 
     .social-links a {
@@ -289,27 +282,3 @@ h2 {
         margin-bottom: 20px;
     }
 }
-
-/* Desktop Styles */
-@media screen and (min-width: 481px) {
-    .social-links {
-        /* display: grid; */
-        /* grid-template-columns: repeat(4, 1fr);  */
-        gap: 10px; 
-        justify-items: center; 
-        align-items: center; 
-        justify-content: center; 
-        margin-top: 20px;
-    }
-
-    .social-links li {
-        display: flex;
-        justify-content: center;
-    }
-
-    .social-links a {
-        padding: 10px 14px;
-        font-size: 1.1rem;
-    }
-}
-
